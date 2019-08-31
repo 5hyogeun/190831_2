@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template, request, jsonify
 import re
+from calculator.controller import CalculatorController
 
 app = Flask(__name__)
 
@@ -29,9 +30,16 @@ def ui_calc():
 
     return jsonify(result=result)
 
-@app.route("/ai_calc")
+@app.route("/ai_calc", methods = ["POST"])
 def ai_calc():
-    pass
+    num1 = request.form['num1']
+    num2 = request.form['num2']
+    opcode = request.form['opcode']
+    c = CalculatorController(num1, num2, opcode)
+    result = c.calc()
+    render_params = {}
+    render_params['result'] = int(result)
+    return render_template('ai_calc.html', **render_params)    # 플라스크 진자
 
 @app.route("/")
 def index():

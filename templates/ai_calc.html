@@ -15,6 +15,13 @@
         <option value = "minus">-</option>
         <option value = "multi">*</option>
         <option value = "div">/</option>
+    </select>
+    <br>
+    <input type="submit" value="SUBMIT">
 </form>
+{% if result%}
+<p>결과 : {{result}}</p>
+{% endif %}
+<a href="/move/index">뒤로가기</a>
 </body>
 </html>
