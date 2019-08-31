@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da3f7c0b-15ae-4fe8-b00a-3e5755cffd47" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calculator/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/calculator/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calculator/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/calculator/controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calculator/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/calculator/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ai_calc.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ai_calc.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
