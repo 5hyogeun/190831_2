@@ -2,7 +2,8 @@ from flask import Flask
 from flask import render_template, request, jsonify
 import re
 from calculator.controller import CalculatorController
-from cabbage.controller import
+from cabbage.controller import CabbageController
+from members.controller import MemberController
 
 app = Flask(__name__)
 
@@ -42,15 +43,27 @@ def ai_calc():
     render_params['result'] = int(result)
     return render_template('ai_calc.html', **render_params)    # 플라스크 진자
 
-@app.route("/cabbage")
+@app.route("/cabbage", methods = ["POST"])
 def cabbage():
     # avg_temp min_temp max_temp rain_fall
     avg_temp = request.form['avg_temp']
     min_temp = request.form['min_temp']
     max_temp = request.form['max_temp']
     rain_fall = request.form['rain_fall']
+    ctrl = CabbageController(avg_temp, min_temp, max_temp, rain_fall)
+    result = ctrl.service()
+    render_params = {}
+    render_params['result'] = result
+    return render_template('cabbage.html', **render_params)
 
-
+@app.route("/login", methods = ["POST"])
+def login():
+    userid = request.form['userid']
+    password = request.form['password']
+    ctrl = MemberController()
+    # ctrl.creat_table()
+    view = ctrl.login(userid, password)
+    return render_template(view)
 
 @app.route("/")
 def index():
