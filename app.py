@@ -2,6 +2,7 @@ from flask import Flask
 from flask import render_template, request, jsonify
 import re
 from calculator.controller import CalculatorController
+from cabbage.controller import
 
 app = Flask(__name__)
 
@@ -40,6 +41,16 @@ def ai_calc():
     render_params = {}
     render_params['result'] = int(result)
     return render_template('ai_calc.html', **render_params)    # 플라스크 진자
+
+@app.route("/cabbage")
+def cabbage():
+    # avg_temp min_temp max_temp rain_fall
+    avg_temp = request.form['avg_temp']
+    min_temp = request.form['min_temp']
+    max_temp = request.form['max_temp']
+    rain_fall = request.form['rain_fall']
+
+
 
 @app.route("/")
 def index():
